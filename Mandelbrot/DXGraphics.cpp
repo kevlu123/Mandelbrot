@@ -1,4 +1,4 @@
-#include "Graphics.h"
+#include "DXGraphics.h"
 #include <cmath>
 #include <d3dcompiler.h>
 #include <stdexcept>
@@ -208,7 +208,7 @@ void Shader::Bind(ID3D11DeviceContext* context) {
 	context->IASetInputLayout(this->inputLayout.Get());
 }
 
-Graphics::Graphics(HWND hWnd, int width, int height, bool vsync, bool pointFiltering) :
+DXGraphics::DXGraphics(HWND hWnd, int width, int height, bool vsync, bool pointFiltering) :
 	hWnd(hWnd),
 	width(width),
 	height(height),
@@ -375,7 +375,7 @@ Graphics::Graphics(HWND hWnd, int width, int height, bool vsync, bool pointFilte
 	);
 }
 
-void Graphics::Present() {
+void DXGraphics::Present() {
 	if (!this->context)
 		return;
 
@@ -397,7 +397,7 @@ void Graphics::Present() {
 	);
 }
 
-void Graphics::DrawMandelbrot(float cxMin, float cxMax, float cyMin, float cyMax) const {
+void DXGraphics::DrawMandelbrot(float cxMin, float cxMax, float cyMin, float cyMax) const {
 	if (!width || !height)
 		return;
 

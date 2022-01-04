@@ -9,7 +9,7 @@ struct Task {
 
 	template <class Fn, class... Args> requires std::is_same_v<Result, std::invoke_result_t<Fn, Args...>>
 	Task(Fn&& fn, Args&&... args) :
-		f(std::async(std::forward<Fn>(fn), std::forward<Args>(args)...)),
+		f(std::async(std::launch::async, std::forward<Fn>(fn), std::forward<Args>(args)...)),
 		complete(false)
 	{
 	}

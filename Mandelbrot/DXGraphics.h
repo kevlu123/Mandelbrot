@@ -19,9 +19,9 @@ private:
 	Microsoft::WRL::ComPtr<ID3D11InputLayout> inputLayout;
 };
 
-class Graphics {
+class DXGraphics {
 public:
-	Graphics(HWND hWnd, int width, int height, bool vsync, bool pointFiltering);
+	DXGraphics(HWND hWnd, int width, int height, bool vsync, bool pointFiltering);
 	void DrawMandelbrot(float cxMin, float cxMax, float cyMin, float cyMax) const;
 	void Present();
 private:
