@@ -25,6 +25,10 @@ This option is only used for -cpu. If present, it uses the main thread to render
 
 Only present the screen buffer on vsync intervals. This caps the fps to the monitor refresh rate.
 
+# Controls
+
+Use the WASD keys to move the viewport and scroll to zoom.
+
 # Screenshots
 
 ![Example 1](./screenshots/1.png)
